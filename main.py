@@ -55,5 +55,7 @@ if uploaded_file is not None:
         path = file.read()
     
     print(path)
+    path = path.replace('\\','/')
+    print(path)
     image = Image.open(path)
     st.image(image)
