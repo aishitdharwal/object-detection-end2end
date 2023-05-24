@@ -10,8 +10,8 @@ import PIL.Image as Image
 # s3 = boto3.resource(
 #     service_name='s3',
 #     region_name='us-east-1',
-#     aws_access_key_id='AKIAV6XGUBGYYFVAX7GL',
-#     aws_secret_access_key='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'
+#     aws_access_key_id='',
+#     aws_secret_access_key=''
 # )
 
 # Print out bucket names
@@ -29,7 +29,8 @@ import PIL.Image as Image
 
 @st.cache_data
 def get_model():
-    os.system('apt-get install python-opencv libopencv-dev python-numpy python-dev')
+    os.system('sudo apt-get update && sudo apt-get upgrade -y')
+    os.system('sudo apt-get install python-opencv libopencv-dev python-numpy python-dev -y')
 
     s3_client = boto3.client('s3',
         aws_access_key_id=st.secrets['aws_access_key_id'],
