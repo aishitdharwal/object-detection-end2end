@@ -162,11 +162,8 @@ def detect(save_img=False):
 
     print(f'Done. ({time.time() - t0:.3f}s)')
     
-    print(save_path)
-    save_path_new = save_path.replace('\\','/')
-    print(save_path_new)
     with open('path.txt', 'w') as file:
-        file.write(save_path_new)
+        file.write(save_path)
 
 
 if __name__ == '__main__':
