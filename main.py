@@ -47,7 +47,7 @@ if uploaded_file is not None:
     
     image.save(uploaded_file_name)
     
-    cmd = f"""python yolov7/detect.py --weights best.pt --conf 0.1 --source {uploaded_file_name} --view-img"""
+    cmd = f"""python3 yolov7/detect.py --weights best.pt --conf 0.1 --source {uploaded_file_name} --view-img"""
     os.system(cmd)
     
     path = ''
