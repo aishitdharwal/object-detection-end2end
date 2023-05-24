@@ -29,6 +29,8 @@ import PIL.Image as Image
 
 @st.cache_data
 def get_model():
+    os.system('apt-get install python-opencv libopencv-dev python-numpy python-dev')
+
     s3_client = boto3.client('s3',
         aws_access_key_id=st.secrets['aws_access_key_id'],
         aws_secret_access_key=st.secrets['aws_secret_access_key'],
