@@ -10,8 +10,8 @@ import PIL.Image as Image
 # s3 = boto3.resource(
 #     service_name='s3',
 #     region_name='us-east-1',
-#     aws_access_key_id='AKIAV6XGUBGYYFVAX7GL',
-#     aws_secret_access_key='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'
+#     aws_access_key_id='',
+#     aws_secret_access_key=''
 # )
 
 # Print out bucket names
