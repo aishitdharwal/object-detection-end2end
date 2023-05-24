@@ -54,5 +54,6 @@ if uploaded_file is not None:
     with open('path.txt', 'r') as file:
         path = file.read()
     
+    print(path)
     image = Image.open(path)
     st.image(image)
