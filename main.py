@@ -29,7 +29,11 @@ import PIL.Image as Image
 
 @st.cache_data
 def get_model():
-    s3_client = boto3.client('s3')
+    s3_client = boto3.client('s3',
+        aws_access_key_id=st.secrets['aws_access_key_id'],
+        aws_secret_access_key=st.secrets['aws_secret_access_key'],
+        region_name=st.secrets['region_name'])
+    
     bucket_name = 'object-detection-end2end'
     file_name = 'best.pt'
     s3_client.download_file(bucket_name, file_name, file_name)
