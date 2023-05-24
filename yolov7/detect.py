@@ -164,7 +164,7 @@ def detect(save_img=False):
     
     save_path_new = save_path.replace('\\','/')
     with open('path.txt', 'w') as file:
-        file.write(save_path)
+        file.write(save_path_new)
 
 
 if __name__ == '__main__':
