@@ -14,7 +14,11 @@ def get_model():
     file_name = 'best.pt'
     s3_client.download_file(bucket_name, file_name, file_name)
 
-get_model()
+if os.path.isfile('best.pt'):
+    pass
+else:
+    get_model()
+    
 st.title('Object Detection App')
 
 uploaded_file = st.file_uploader('Choose an image', type=['png','jpg','jpeg'])
