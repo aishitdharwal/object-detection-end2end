@@ -1,31 +1,11 @@
+import io
+import os
+
 import boto3
 import pandas as pd
-import streamlit as st
-import os
-import io
 import PIL.Image as Image
+import streamlit as st
 
-# s3 = boto3.client('s3')
-
-# s3 = boto3.resource(
-#     service_name='s3',
-#     region_name='us-east-1',
-#     aws_access_key_id='',
-#     aws_secret_access_key=''
-# )
-
-# Print out bucket names
-# for bucket in s3.buckets.all():
-#     print(bucket.name)
-
-# bucket = s3.Bucket(bucket_name)
-
-# for obj in bucket.objects.all():
-#     print(obj)
-
-# obj = bucket.Object('best.pt').get()
-# print(obj)
-# print(obj['Body'])
 
 @st.cache_data
 def get_model():
@@ -47,7 +27,7 @@ if uploaded_file is not None:
     
     image.save(uploaded_file_name)
     
-    cmd = f"""python3 yolov7/detect.py --weights best.pt --conf 0.1 --source {uploaded_file_name} --view-img"""
+    cmd = f"""python3 yolov7/detect.py --weights best.pt --conf 0.1 --source "{uploaded_file_name}" --view-img"""
     os.system(cmd)
     
     path = ''
