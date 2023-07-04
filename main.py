@@ -14,10 +14,7 @@ def get_model():
     file_name = 'best.pt'
     s3_client.download_file(bucket_name, file_name, file_name)
 
-if os.path.isfile('best.pt'):
-    pass
-else:
-    get_model()
+get_model()
     
 st.title('Object Detection App')
 
