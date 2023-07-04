@@ -10,7 +10,7 @@ import streamlit as st
 @st.cache_data
 def get_model():
     s3_client = boto3.client('s3')
-    bucket_name = 'object-detection-end2end'
+    bucket_name = 'object-detection-end2end2'
     file_name = 'best.pt'
     s3_client.download_file(bucket_name, file_name, file_name)
 
